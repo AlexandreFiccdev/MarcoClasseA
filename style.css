@@ -619,7 +619,7 @@ textarea {
         margin-bottom: 10px;
     }
     #especialidades h2{
-        font-size: 46px;
+        font-size: 42px;
     }
     #contato h2{
         font-size: 46px;
@@ -669,7 +669,7 @@ textarea {
         height: calc(280vh - var(--nav-height));
     }
     #especialidades h2{
-        font-size: 38px;
+        font-size: 35px;
     }
     #contato h2{
         font-size: 38px;
@@ -720,7 +720,7 @@ textarea {
         height: calc(255vh - var(--nav-height));
     }
     #especialidades h2{
-        font-size: 32px;
+        font-size: 28px;
     }
     #especialidades h3{
         font-size: 24px;
@@ -827,7 +827,7 @@ textarea {
         font-size: 28px;
     }
     #especialidades h2{
-        font-size: 28px;
+        font-size: 25px;
     }
     .card img {
         height: 40%;
@@ -877,7 +877,7 @@ textarea {
         height: calc(132vh - var(--nav-height));
     }
     #especialidades h2{
-        font-size: 25px;
+        font-size: 22px;
     }
     .card{
         width: 220px;
