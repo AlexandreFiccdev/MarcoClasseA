@@ -23,41 +23,38 @@ prevButton.addEventListener('click', () => {
 
 
 function updateButtonColor() {
-    const scrollPosition = window.scrollY;
-
-    const homePosition = document.getElementById('home').offsetTop;
-    const sobrePosition = document.getElementById('sobre').offsetTop;
-    const especialidadesPosition = document.getElementById('especialidades').offsetTop;
-    const projetosPosition = document.getElementById('projetos').offsetTop;
-    const contatoPosition = document.getElementById('contato').offsetTop;
+    const sections = [
+        { id: 'home', button: 'a[href="#home"] .button-topnav' },
+        { id: 'sobre', button: 'a[href="#sobre"] .button-topnav' },
+        { id: 'especialidades', button: 'a[href="#especialidades"] .button-topnav' },
+        { id: 'projetos', button: 'a[href="#projetos"] .button-topnav' },
+        { id: 'contato', button: 'a[href="#contato"] .button-topnav' },
+    ];
 
     const buttons = document.querySelectorAll('.button-topnav');
+    let mostVisibleSection = null;
+    let maxVisibleHeight = 0;
 
-    if (scrollPosition >= contatoPosition - 50) {
+    sections.forEach(section => {
+        const element = document.getElementById(section.id);
+        const rect = element.getBoundingClientRect(); // Posição da seção relativa à janela de visualização
+
+        const visibleHeight = Math.max(0, Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0));
+        if (visibleHeight > maxVisibleHeight) {
+            maxVisibleHeight = visibleHeight;
+            mostVisibleSection = section;
+        }
+    });
+
+    if (mostVisibleSection) {
         buttons.forEach(button => button.classList.remove('active'));
-        document.querySelector('a[href="#contato"] .button-topnav').classList.add('active');
-    } else if (scrollPosition >= projetosPosition - 50) {
-        buttons.forEach(button => button.classList.remove('active'));
-        document.querySelector('a[href="#projetos"] .button-topnav').classList.add('active');
-    } else if (scrollPosition >= especialidadesPosition - 50) {
-        buttons.forEach(button => button.classList.remove('active'));
-        document.querySelector('a[href="#especialidades"] .button-topnav').classList.add('active');
-    } else if (scrollPosition >= sobrePosition - 50) {
-        buttons.forEach(button => button.classList.remove('active'));
-        document.querySelector('a[href="#sobre"] .button-topnav').classList.add('active');
-    } else {
-        buttons.forEach(button => button.classList.remove('active'));
-        document.querySelector('a[href="#home"] .button-topnav').classList.add('active');
+        document.querySelector(mostVisibleSection.button).classList.add('active');
     }
 }
-    
-window.onload = function () {
-    updateButtonColor();
-};
 
-window.onscroll = function () {
-    updateButtonColor();
-};
+window.onload = updateButtonColor;
+window.onscroll = updateButtonColor;
+
 
 document.addEventListener('DOMContentLoaded', () => {
     const menuButton = document.getElementById('menu-button');

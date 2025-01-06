@@ -63,13 +63,12 @@ h6{
 }
 
 .logo-container {
-    margin-right: 20px;
     position: absolute;
-    left: 38px;
+    left: 60px;
 }
 
 .logo {
-    height: 60px; 
+    height: 48px; 
     width: auto;
 }
 .menu-button {
@@ -128,18 +127,16 @@ h6{
 
 
 #home {
-    background: url('imagem_home.jpg') no-repeat center center;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 60%, rgba(140, 84, 35, 1) 100%), url('Imagens/background/imagem_home.jpg') no-repeat center center;
     background-size: cover;
-    display: flex; 
+    display: flex;
     flex-direction: column;
-    justify-content: center; 
-    align-items: center; 
+    justify-content: center;
+    align-items: center;
     height: 100vh;
-    width: 100%; 
-    padding: 0;
-    margin: 0;
-    overflow: hidden;
+    text-align: center;
 }
+
 
 #home h1 {
     font-size: 3rem;
@@ -181,8 +178,8 @@ h6{
     background-color: #2C0202; /* Cor de destaque ao passar o mouse */
 }
 
-#sobre{
-    background-color: #8C5423;
+#sobre{  
+    background: linear-gradient(to top, #8C5423, rgba(0, 0, 0, 0)), #8C5423;
     background-size: cover;
     display: flex; 
     flex-direction: column;
@@ -199,15 +196,14 @@ h6{
 #sobre h2{
     font-size: 60px;
     color: #fff;
-    margin-left: 30px;
-    margin-right: 30px;
+    margin-left: 60px;
     font-weight: 900;
 }
 #sobre p{
     color: #fff;
     font-size: 24px;
-    margin-left: 30px;
-    margin-right: 30px;
+    margin-left: 60px;
+    margin-right: 60px;
     margin-top: 5px;
     font-weight:100;
     margin-bottom: 30px;
@@ -289,7 +285,7 @@ h6{
 
 .carousel {
     position: relative;
-    width: 95%;
+    width: 92%;
     margin: 0 auto;
     overflow: hidden;
     border-radius: 10px;
@@ -397,15 +393,14 @@ h6{
 
 #contato h2 {
     font-size: 60px;
-    margin-bottom: 20px;
+    margin-bottom: 60px;
     margin-top: 40px;
 }
 
 #contato p {
     font-size: 24px;
     margin-bottom: 40px;
-    margin-left: 40px;
-    margin-right: 40px;
+    margin-left: 60px;
 }
 
 #contato strong {
@@ -428,7 +423,7 @@ form {
 }
 
 input, textarea {
-    width: 710px;
+    width: 690px;
     height: auto;
     padding: 10px;
     border: 2px solid #fff;
@@ -479,10 +474,102 @@ textarea {
 .whatsapp-icon:hover {
     transform: scale(1.1);
 }
+@media screen and (min-width: 1800px) {
+    .carousel {
+        width: 90%; 
+    }
+
+    .carousel-item {
+        height: 800px; 
+    }
+
+    .carousel-caption {
+        height: 25%; 
+        font-size: 1.5rem; 
+    }
+
+    .carousel-caption h3 {
+        font-size: 4rem; 
+    }
+
+    .carousel-caption p {
+        font-size: 2rem; 
+    }
+
+    
+    .arrow {
+        width: 100px;
+        height: 100px;
+    }
+
+    
+    #projetos svg {
+        width: 100px;
+        height: 100px;
+    }
+
+    
+    #contato h2 {
+        font-size: 80px; 
+    }
+
+    #contato p {
+        font-size: 28px; 
+    }
+
+    input {
+        height: 80px; 
+        font-size: 1.2rem; 
+    }
+    textarea{
+        height: 200px;
+    }
+    #contato button {
+        font-size: 1.5rem; 
+        padding: 15px 30px; 
+        height: 80px;
+        width: 400px;
+        border-radius: 30px;
+    }
+    .card {
+        width: 500px; 
+        height: 350px;
+    }
+    
+    .card img {
+        width: 95%; 
+        height: 60%;
+        border-radius: 10px; 
+    }
+    
+    .card h3 {
+        font-size: 34px; 
+    }
+    
+    .card p {
+        font-size: 1.3rem;
+    }
+    #especialidades h2{
+        font-size: 80px;
+    }
+    #ultimo-card{
+        margin-bottom: 60px;
+    }
+}
 
 @media (max-width: 1115px) {
+    .logo-container{
+        left: 40px;
+    }
     #sobre{
         height: calc(105vh - var(--nav-height));
+    }
+    #sobre h2{
+        margin-left: 40px;
+    }
+    #sobre p{
+        margin-left: 40px;
+        margin-right: 40px;
     }
     #especialidades{
         height: calc(160vh - var(--nav-height));
@@ -495,7 +582,9 @@ textarea {
     input, textarea {
         width: 944px;
     }
-
+    #contato p{
+        margin-left: 40px;
+    }
 }
 @media (max-width: 972px) {
     input, textarea {
@@ -629,6 +718,7 @@ textarea {
     }
     #sobre h2{
         font-size: 46px;
+        margin-left: 30px;
     }
     #contato p{
         font-size: 20px;
@@ -637,6 +727,16 @@ textarea {
     }
     input, textarea {
         width: 600px;
+    }
+    .logo-container{
+        left: 30px;
+    }
+    #sobre p{
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+    #contato p{
+        margin-left: 30px;
     }
 }
 @media (max-width: 610px) {
@@ -707,6 +807,19 @@ textarea {
     }
     .carousel-caption p {
         font-size: 0.8rem;
+    }
+    .logo-container{
+        left: 20px;
+    }
+    #sobre p{
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    #sobre h2{
+        margin-left: 20px;
+    }
+    #contato p{
+        margin-left: 20px;
     }
 }
 @media (max-width: 440px) {
